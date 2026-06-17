@@ -1,0 +1,4 @@
+The user writes text into the input field and clicks Save. Instead of submitting the form normally, a JavaScript event handler takes over: it adds the new note to the local notes list, re-renders the notes on the page immediately, and prevents the default form submission (so the page does not reload).
+The handler then sends an HTTP POST request to /exampleapp/new_note_spa, with the note sent as JSON in the request body. The server saves the note and responds with status 201 Created and a small JSON confirmation message.
+Because the page was already updated by JavaScript, the user sees the new note right away without any page reload, and the network request to the server happens quietly in the background.
+The key difference: in 0.4 the browser reloads the whole page through a redirect and fresh GET requests, while in 0.6 JavaScript updates the view instantly and sends the data to the server as JSON in the background.
