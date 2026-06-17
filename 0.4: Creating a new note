@@ -1,0 +1,4 @@
+The user writes text into the input field and clicks Save. The browser sends an HTTP POST request to https://studies.cs.helsinki.fi/exampleapp/new_note, with the note's content included as form data in the request body.
+The server saves the new note and responds with an HTTP 302 redirect, telling the browser to go to /exampleapp/notes.
+Following the redirect, the browser sends an HTTP GET request to /exampleapp/notes. The server responds with the HTML document. The browser then sends separate GET requests for the linked resources: main.css and main.js.
+The browser executes main.js, which triggers another GET request to /data.json. The server returns the notes as JSON (now including the note that was just added). The JavaScript callback renders all the notes onto the page, and the user sees the updated list with the new note.
