@@ -1,0 +1,3 @@
+The user navigates to https://studies.cs.helsinki.fi/exampleapp/spa. The browser sends an HTTP GET request to that address, and the server responds with the HTML document.
+The browser then sends GET requests for the linked resources: main.css and spa.js.
+The browser executes spa.js, which sends a GET request to /data.json. The server returns the notes as JSON, and the JavaScript callback renders them onto the page. The user sees the list of notes. From this point on, no full page reloads happen.
